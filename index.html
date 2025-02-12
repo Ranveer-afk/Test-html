@@ -14,39 +14,43 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #ffb6c1;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
       animation: gradient 10s infinite alternate;
       overflow: hidden;
       font-family: 'Zeyada', cursive;
     }
 
     @keyframes gradient {
-      0% { background: #ffb6c1; }
-      100% { background: #ff69b4; }
+      0% { background: #ff9a9e; }
+      50% { background: #fad0c4; }
+      100% { background: #ff9a9e; }
     }
 
     /* Paper Styling */
     .paper {
-      position: absolute;
       padding: 20px 50px;
-      background-color: #fff;
-      background-image: url("https://i0.wp.com/textures.world/wp-content/uploads/2018/10/2-Millimeter-Paper-Background-copy.jpg?ssl=1");
-      background-size: 500px;
-      background-position: center;
+      background-color: #fff5f8; /* Light pink background */
       box-shadow: 1px 15px 20px rgba(0, 0, 0, 0.3);
-      transform: rotateZ(-5deg);
       cursor: grab;
       user-select: none;
+      margin: 20px;
+      border-radius: 15px;
+      border: 2px solid #ff69b4;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
 
     .paper.red {
-      background-color: #ffebee;
+      background-color: #fff0f3; /* Light red background */
+      border: 2px solid #e91e63;
     }
 
     .paper p {
       margin: 0;
       font-size: 30px;
-      color: #333;
+      color: #e91e63;
       text-align: center;
     }
 
@@ -67,6 +71,7 @@
       cursor: pointer;
       background-color: #ffebee;
       box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
+      color: #e91e63;
     }
 
     button:hover {
@@ -83,6 +88,8 @@
       transform: rotateZ(5deg);
       cursor: grab;
       user-select: none;
+      border-radius: 10px;
+      border: 2px solid #ff69b4;
     }
 
     .polaroid img {
@@ -90,13 +97,14 @@
       height: auto;
       display: block;
       margin-bottom: 10px;
+      border-radius: 5px;
     }
 
     .polaroid p {
       margin: 0;
       font-size: 20px;
       text-align: center;
-      color: #333;
+      color: #e91e63;
     }
 
     /* Emotional Message Styling */
@@ -134,10 +142,18 @@
       background: white;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
       z-index: 1001;
       max-width: 500px;
       width: 90%;
+      border: 2px solid #ff69b4;
+      display: none;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0 0 10px #ff69b4; }
+      100% { box-shadow: 0 0 20px #e91e63; }
     }
 
     .email-content {
@@ -156,6 +172,7 @@
     .close-btn {
       cursor: pointer;
       font-size: 24px;
+      color: #e91e63;
     }
 
     .typing-container {
@@ -181,6 +198,29 @@
 
     @keyframes blink {
       50% { opacity: 0; }
+    }
+
+    /* Tap to Open Button */
+    #tapToOpen {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px 40px;
+      font-size: 30px;
+      font-family: 'Zeyada', cursive;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 1002;
+      display: none;
+    }
+
+    #tapToOpen:hover {
+      background-color: #e91e63;
     }
 
     /* Hearts Animation */
@@ -226,33 +266,34 @@
     </div>
   </div>
   <div class="paper red">
-    <p>You're amazing! ❤️</p>
+    <p>You are mine 💓🥺
+   </p>
   </div>
 
-  <!-- Draggable Polaroids -->
-  <div class="polaroid">
-    <img src="https://via.placeholder.com/200" alt="Photo 1">
-    <p>Memories</p>
+  <!-- Draggable Polaroids (Stacked Vertically) -->
+  <div class="polaroid" style="top: 10%; left: 50%;">
+    <img src="https://raw.githubusercontent.com/Ranveer-afk/Hu/refs/heads/main/Snapchat-120194306.jpg" alt="Photo 1">
+    <p>My love </p>
   </div>
-  <div class="polaroid">
-    <img src="https://via.placeholder.com/200" alt="Photo 2">
-    <p>Adventures</p>
+  <div class="polaroid" style="top: 30%; left: 50%;">
+    <img src="https://raw.githubusercontent.com/Ranveer-afk/Hu/refs/heads/main/Snapchat-1386845187.jpg" alt="Photo 2">
+    <p>my Beautiful</p>
   </div>
-  <div class="polaroid">
-    <img src="https://via.placeholder.com/200" alt="Photo 3">
-    <p>Sunset</p>
+  <div class="polaroid" style="top: 50%; left: 50%;">
+    <img src="https://raw.githubusercontent.com/Ranveer-afk/Hu/refs/heads/main/Snapchat-1924219741.jpg" alt="Photo 3">
+    <p>My hotiee</p>
   </div>
-  <div class="polaroid">
-    <img src="https://via.placeholder.com/200" alt="Photo 4">
-    <p>Beach Day</p>
+  <div class="polaroid" style="top: 70%; left: 50%;">
+    <img src="https://raw.githubusercontent.com/Ranveer-afk/Hu/refs/heads/main/Snapchat-2093361975.jpg" alt="Photo 4">
+    <p>My princess</p>
   </div>
-  <div class="polaroid">
-    <img src="https://via.placeholder.com/200" alt="Photo 5">
-    <p>Mountains</p>
+  <div class="polaroid" style="top: 90%; left: 50%;">
+    <img src="https://raw.githubusercontent.com/Ranveer-afk/Hu/refs/heads/main/Snapchat-617800554.jpg" alt="Photo 5">
+    <p>my wifeyy</p>
   </div>
-  <div class="polaroid">
-    <img src="https://via.placeholder.com/200" alt="Photo 6">
-    <p>City Lights</p>
+  <div class="polaroid" style="top: 110%; left: 50%;">
+    <img src="https://raw.githubusercontent.com/Ranveer-afk/Hu/refs/heads/main/Snapchat-877881578.jpg"Photo 6">
+    <p>my akhila 💗</p>
   </div>
 
   <!-- Emotional Message -->
@@ -260,6 +301,9 @@
     <h1>You've Made Me the Happiest Person! ❤️</h1>
     <p>Every moment with you is a treasure. I can't wait to spend forever with you. I love you to the moon and back! 🌙✨</p>
   </div>
+
+  <!-- Tap to Open Button -->
+  <button id="tapToOpen">Tap to Open 💌</button>
 
   <!-- Email Modal -->
   <div id="emailModal" class="hidden">
@@ -269,7 +313,7 @@
         <h2>💌 New Message</h2>
       </div>
       <div class="email-body">
-        <p>From: Your Admirer ❤️</p>
+        <p>From: Your Baby ❤️</p>
         <p>Subject: My Heart's Confession</p>
         <div class="typing-container">
           <div id="typedMessage"></div>
@@ -283,7 +327,7 @@
   <div class="hearts-container"></div>
 
   <!-- Audio for Song -->
-  <audio id="valentineSong" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+  <audio id="valentineSong" src="/m_an_l_emre_daldal.mp3"></audio>
 
   <script>
     let highestZ = 1;
@@ -369,12 +413,26 @@
     const noButton = document.getElementById('noButton');
     const emotionalMessage = document.getElementById('emotionalMessage');
     const emailModal = document.getElementById('emailModal');
+    const tapToOpen = document.getElementById('tapToOpen');
     const valentineSong = document.getElementById('valentineSong');
 
     yesButton.addEventListener('click', () => {
       emotionalMessage.style.display = 'none';
-      emailModal.classList.remove('hidden');
+      tapToOpen.style.display = 'block';
       valentineSong.play();
+    });
+
+    noButton.addEventListener('click', () => {
+      alert("You have to love me no option �😢");
+      noButton.style.position = 'absolute';
+      noButton.style.left = `${Math.random() * window.innerWidth}px`;
+      noButton.style.top = `${Math.random() * window.innerHeight}px`;
+    });
+
+    // Tap to Open Button
+    tapToOpen.addEventListener('click', () => {
+      tapToOpen.style.display = 'none';
+      emailModal.style.display = 'block';
 
       const message = `My Dearest Love,
 
@@ -391,27 +449,20 @@ favorite melody. I cherish...
 You're my forever and always. 
 
 With all my heart,
-Your Eternal Admirer ❤️`;
+Your Ranveer❤️`;
 
-      typeMessage(message, 'typedMessage');
-    });
-
-    noButton.addEventListener('click', () => {
-      alert("Oh no! Maybe next time? 😢");
-      noButton.style.position = 'absolute';
-      noButton.style.left = `${Math.random() * window.innerWidth}px`;
-      noButton.style.top = `${Math.random() * window.innerHeight}px`;
+      typeMessage(message, 'typedMessage', 30);
     });
 
     // Email Modal Close
     document.querySelector('.close-btn').addEventListener('click', () => {
-      emailModal.classList.add('hidden');
+      emailModal.style.display = 'none';
     });
 
     // Hearts Animation
     function createHearts() {
       const container = document.querySelector('.hearts-container');
-      for (let i = 0; i < 50; i++) {
+      for (let i = 0; i < 250; i++) { // Increased number of hearts
         const heart = document.createElement('div');
         heart.className = 'heart';
         heart.innerHTML = '❤';
